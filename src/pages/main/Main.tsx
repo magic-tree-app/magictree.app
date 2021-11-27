@@ -14,7 +14,7 @@ export const Main: React.FC = () => {
     {
       key: 'discord',
       title: 'Discord',
-      href: '/',
+      href: 'https://discord.com/invite/KYtJEHqcH6',
     },
     {
       key: 'telegram',
