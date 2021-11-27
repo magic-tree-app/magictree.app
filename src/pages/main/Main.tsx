@@ -14,7 +14,7 @@ export const Main: React.FC = () => {
     {
       key: 'discord',
       title: 'Discord',
-      href: 'https://discord.gg/',
+      href: process.env.REACT_APP_TEST,
     },
     {
       key: 'telegram',
@@ -34,7 +34,14 @@ export const Main: React.FC = () => {
       <SocialMediaContainer>
         {
           socialMediaLinks.map((link) => (
-            <SocialMediaLink key={link.key} href={link.href} rel="noopener noreferrer">{link.title}</SocialMediaLink>
+            <SocialMediaLink
+              key={link.key}
+              href={link.href}
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              {link.title}
+            </SocialMediaLink>
           ))
         }
       </SocialMediaContainer>

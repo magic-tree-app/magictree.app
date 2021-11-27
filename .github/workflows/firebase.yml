@@ -15,6 +15,13 @@ jobs:
         node-version: [16.x]
     steps:
     - uses: actions/checkout@v2
+
+    - name: Create env file
+      run: |
+        touch .env
+        echo API_ENDPOINT=${{ secrets.REACT_APP_TEST }} >> .env
+        cat .env
+
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v2
       with:
@@ -22,6 +29,7 @@ jobs:
         cache: 'npm'
     - run: npm ci
     - run: npm run build
+
     - name: Archive build
       uses: actions/upload-artifact@v2
       with:
@@ -39,6 +47,7 @@ jobs:
       with:
         name: build
         path: build
+
     - name: Deploy to Firebase
       uses: w9jds/firebase-action@master
       with:
