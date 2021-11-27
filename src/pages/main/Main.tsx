@@ -9,17 +9,17 @@ export const Main: React.FC = () => {
     {
       key: 'instagram',
       title: 'Instagram',
-      href: 'https://instagram.com/',
+      href: '/',
     },
     {
       key: 'discord',
       title: 'Discord',
-      href: process.env.REACT_APP_TEST,
+      href: '/',
     },
     {
       key: 'telegram',
       title: 'Telegram',
-      href: 'https://t.me/',
+      href: '/',
     },
   ], []);
 
