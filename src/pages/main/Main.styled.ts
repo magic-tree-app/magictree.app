@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Title = styled.h1`
-  color: ${({ theme }) => theme.colors.blue};
+  color: ${({ theme }) => theme.colors.primary.normal};
 `;
 
 export const SocialMediaLink = styled.a`
@@ -10,13 +10,13 @@ export const SocialMediaLink = styled.a`
   text-decoration: none;
   font-size: 1.5rem;
   line-height: 2rem;
-  color: ${({ theme }) => theme.colors.white};
+  color: ${({ theme }) => theme.colors.white.normal};
   background-color: transparent;
   border-radius: 0.2rem;
   transition: background-color 200ms;
 
   &:hover {
-    background-color: ${({ theme }) => theme.colors.blue};
+    background-color: ${({ theme }) => theme.colors.primary.normal};
   }
 `;
 
@@ -34,7 +34,7 @@ export const PageSection = styled.section`
   flex-direction: column;
   width: 100%;
   min-height: 100vh;
-  background-color: ${({ theme }) => theme.colors.green};
+  background-color: ${({ theme }) => theme.colors.green.normal};
 
   img {
     height: 45vh;

@@ -1,6 +1,8 @@
+require('dotenv').config();
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const DotEnvPlugin = require('dotenv-webpack');
+const InterpolateHtmlPlugin = require('interpolate-html-plugin');
 const StyledComponentsTransformer = require('typescript-plugin-styled-components').default({
   minify: true,
 });
@@ -9,14 +11,13 @@ const isProduction = process.env.NODE_ENV === 'production';
 
 module.exports = {
   mode: isProduction ? 'production' : 'development',
-  // devServer: {
-  //   stats: {
-  //     chunks: false,
-  //   },
-  // },
   entry: './src/index.tsx',
+  devServer: {
+    historyApiFallback: true,
+  },
   output: {
     path: `${__dirname}/build/`,
+    publicPath: '/',
   },
   module: {
     rules: [
@@ -40,6 +41,7 @@ module.exports = {
   devtool: isProduction ? undefined : 'source-map',
   plugins: [
     new DotEnvPlugin({ systemvars: true, silent: true }),
+    new InterpolateHtmlPlugin(process.env),
     new CopyWebpackPlugin({
       patterns: [{
         from: 'public',

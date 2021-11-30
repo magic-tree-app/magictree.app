@@ -1,11 +1,12 @@
-import { initializeApp } from 'firebase/app';
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { initializeApp } from 'firebase/app';
+import { BrowserRouter } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 import { defaultTheme } from './styled/theme';
 import { GlobalStyle } from './styled/global';
 
-import { Main } from './pages';
+import { Routes } from './pages/Routes';
 
 initializeApp({
   apiKey: process.env.REACT_APP_FIREBASE__API_KEY,
@@ -20,7 +21,9 @@ ReactDOM.render(
   <React.StrictMode>
     <ThemeProvider theme={defaultTheme}>
       <GlobalStyle />
-      <Main />
+      <BrowserRouter>
+        <Routes />
+      </BrowserRouter>
     </ThemeProvider>
   </React.StrictMode>,
   document.getElementById('root'),

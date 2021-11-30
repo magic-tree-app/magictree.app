@@ -22,7 +22,8 @@ jobs:
         cache: 'npm'
     - run: npm ci
     - run: npm run build
-      env: 
+      env:
+        PUBLIC_URL: ${{ secrets.PUBLIC_URL }}
         REACT_APP_FIREBASE__API_KEY: ${{ secrets.FIREBASE_API_KEY }}
         REACT_APP_FIREBASE__AUTH_DOMAIN: ${{ secrets.FIREBASE_AUTH_DOMAIN }}
         REACT_APP_FIREBASE__PROJECT_ID: ${{ secrets.FIREBASE_PROJECT_ID }}
