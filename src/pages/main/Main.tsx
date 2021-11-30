@@ -1,4 +1,5 @@
 import React, { useMemo } from 'react';
+import { Link } from 'react-router-dom';
 import {
   PageSection, SocialMediaContainer, SocialMediaLink, Title,
 } from './Main.styled';
@@ -45,9 +46,9 @@ export const Main: React.FC = () => {
           ))
         }
       </SocialMediaContainer>
-      <SocialMediaLink href="/view">
+      <Link to="/view">
         Launch demo
-      </SocialMediaLink>
+      </Link>
     </PageSection>
   );
 };
