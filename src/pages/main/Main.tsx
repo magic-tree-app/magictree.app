@@ -45,6 +45,9 @@ export const Main: React.FC = () => {
           ))
         }
       </SocialMediaContainer>
+      <SocialMediaLink href="/view">
+        Launch demo
+      </SocialMediaLink>
     </PageSection>
   );
 };
