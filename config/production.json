@@ -10,7 +10,7 @@
       "destination": "/index.html"
     }],
     "ignore": [
-      "firebase.json",
+      "config/*.json",
       "**/.*",
       "**/node_modules/**"
     ]
