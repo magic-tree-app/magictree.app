@@ -3,8 +3,8 @@
     "default": "magictree-app"
   },
   "hosting": {
-    "target": "production",
-    "public": "build/production",
+    "site": "magictree-app",
+    "public": "build-prod",
     "rewrites": [{
       "source": "/**",
       "destination": "/index.html"

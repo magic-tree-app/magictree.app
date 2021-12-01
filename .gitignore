@@ -1,10 +1,8 @@
-# dependencies
 /node_modules
 
-# production
-/build
+/build-dev
+/build-prod
 
-# misc
 /.idea
 /.firebase
 .DS_Store
