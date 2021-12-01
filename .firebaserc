@@ -1,5 +1,18 @@
 {
   "projects": {
-    "default": "magictree-app"
+    "production": "magictree-app",
+    "development": "magictree-dev"
+  },
+  "targets": {
+    "magictree-app": {
+      "hosting": {
+        "production": [
+          "magictree-app"
+        ],
+        "development": [
+          "magictree-dev"
+        ]
+      }
+    }
   }
 }

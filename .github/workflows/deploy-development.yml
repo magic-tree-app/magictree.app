@@ -1,0 +1,55 @@
+name: Deploy to Firebase (development)
+
+on:
+  push:
+    branches: [ dev ]
+  pull_request:
+    branches: [ dev ]
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [16.x]
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v2
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+    - run: npm ci
+    - run: npm run build
+      env:
+        TARGET: development
+        PUBLIC_URL: ${{ secrets.DEVELOPMENT_URL }}
+        REACT_APP_FIREBASE__API_KEY: ${{ secrets.FIREBASE_API_KEY }}
+        REACT_APP_FIREBASE__AUTH_DOMAIN: ${{ secrets.FIREBASE_AUTH_DOMAIN }}
+        REACT_APP_FIREBASE__PROJECT_ID: ${{ secrets.FIREBASE_PROJECT_ID }}
+        REACT_APP_FIREBASE__STORAGE_BUCKET: ${{ secrets.FIREBASE_STORAGE_BUCKET }}
+        REACT_APP_FIREBASE__MESSAGING_SENDER_ID: ${{ secrets.FIREBASE_MESSAGING_SENDER_ID }}
+        REACT_APP_FIREBASE__APP_ID: ${{ secrets.FIREBASE_APP_ID }}
+    - name: Archive build
+      uses: actions/upload-artifact@v2
+      with:
+        name: build
+        path: build
+  deploy:
+    name: Deploy
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Download build
+      uses: actions/download-artifact@v2
+      with:
+        name: build
+        path: build
+    - name: Deploy to Firebase
+      uses: w9jds/firebase-action@master
+      with:
+        args: deploy --only hosting:development
+      env:
+        FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}

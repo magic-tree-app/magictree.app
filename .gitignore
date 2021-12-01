@@ -6,6 +6,7 @@
 
 # misc
 /.idea
+/.firebase
 .DS_Store
 .env
 .env.development.local
