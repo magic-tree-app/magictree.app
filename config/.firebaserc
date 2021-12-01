@@ -1,7 +1,5 @@
 {
-  "projects": {
-    "default": "magictree-app"
-  },
+  "projects": {},
   "targets": {
     "magictree-app": {
       "hosting": {

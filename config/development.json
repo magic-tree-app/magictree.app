@@ -1,4 +1,7 @@
 {
+  "projects": {
+    "default": "magictree-app"
+  },
   "hosting": {
     "target": "development",
     "public": "build/development",
