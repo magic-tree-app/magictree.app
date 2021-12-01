@@ -16,7 +16,7 @@ module.exports = {
     historyApiFallback: true,
   },
   output: {
-    path: `${__dirname}/${process.env.TARGET}`,
+    path: `${__dirname}/build`,
     publicPath: '/',
   },
   module: {

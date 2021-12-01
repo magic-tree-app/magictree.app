@@ -1,10 +1,7 @@
 {
-  "projects": {
-    "default": "magictree-app"
-  },
   "hosting": {
     "site": "magictree-dev",
-    "public": "build-dev",
+    "public": "build",
     "rewrites": [{
       "source": "/**",
       "destination": "/index.html"
