@@ -2,7 +2,8 @@ import React from 'react';
 import { useRoutes } from 'react-router-dom';
 import { Main } from './main/Main';
 import { View } from './view/View';
-import { TextPlaceholder, Typography } from '../components';
+import { DevView } from './devView/DevView';
+import { TextPlaceholder } from '../components';
 
 export const Routes: React.FC = (): JSX.Element => {
   const routing = useRoutes([
@@ -15,7 +16,7 @@ export const Routes: React.FC = (): JSX.Element => {
         { path: 'collection', element: <TextPlaceholder text="Toy collection" /> },
       ],
     },
-    { path: '/typography', element: <Typography text="The quick brown fox jumps over the lazy dog." /> },
+    { path: process.env.REACT_APP_DEV_PATH, element: <DevView /> },
   ]);
 
   return <>{routing}</>;

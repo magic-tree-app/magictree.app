@@ -1,9 +1,9 @@
 import styled, { css } from 'styled-components';
 
 export const Typography = css`
-  font-size-adjust: 0.03;
   font-family: 'Arial Rounded MT Bold', sans-serif;
   line-height: 1.25;
+  letter-spacing: 0.03px;
 `;
 
 export const Body = css`
