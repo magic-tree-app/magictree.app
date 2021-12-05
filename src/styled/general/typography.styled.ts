@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components';
 export const Typography = css`
   font-family: 'Arial Rounded MT Bold', sans-serif;
   line-height: 1.25;
-  letter-spacing: 0.03px;
+  letter-spacing: 0.03rem;
 `;
 
 export const Body = css`

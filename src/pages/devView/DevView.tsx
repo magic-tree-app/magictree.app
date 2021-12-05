@@ -3,14 +3,18 @@ import {
   H1, H2, H3, H4, H5, H6, Text,
 } from '../../styled/general/typography.styled';
 
-export const DevView: React.FC = () => (
+type DevViewProps = {
+  text: string;
+}
+
+export const DevView: React.FC<DevViewProps> = ({ text }) => (
   <>
-    <H1>The quick brown fox jumps over the lazy dog.</H1>
-    <H2>The quick brown fox jumps over the lazy dog.</H2>
-    <H3>The quick brown fox jumps over the lazy dog.</H3>
-    <H4>The quick brown fox jumps over the lazy dog.</H4>
-    <H5>The quick brown fox jumps over the lazy dog.</H5>
-    <H6>The quick brown fox jumps over the lazy dog.</H6>
-    <Text>The quick brown fox jumps over the lazy dog.</Text>
+    <H1>{text}</H1>
+    <H2>{text}</H2>
+    <H3>{text}</H3>
+    <H4>{text}</H4>
+    <H5>{text}</H5>
+    <H6>{text}</H6>
+    <Text>{text}</Text>
   </>
 );
