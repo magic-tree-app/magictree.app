@@ -43,8 +43,8 @@ export const GlobalStyle = createGlobalStyle`
   code,
   kbd,
   samp {
-    font-family: monospace, monospace; /* 1 */
-    font-size: 1em; /* 2 */
+    font-family: monospace, monospace;
+    font-size: 1em;
   }
 
   small {
@@ -147,8 +147,8 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   [type="search"] {
-    -webkit-appearance: textfield; /* 1 */
-    outline-offset: -2px; /* 2 */
+    -webkit-appearance: textfield;
+    outline-offset: -2px;
   }
 
   [type="search"]::-webkit-search-decoration {
@@ -180,7 +180,7 @@ export const GlobalStyle = createGlobalStyle`
     padding: 0;
     margin: 0;
     font-family: 'Arial Rounded MT Bold', sans-serif;
-    letter-spacing: 0.3px;
+    letter-spacing: 0.03rem;
     background-color: ${({ theme }) => theme.colors.primary.darker};
   }
 `;
