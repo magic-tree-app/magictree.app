@@ -6,9 +6,8 @@ export const Typography = css`
   letter-spacing: 0.03rem;
 `;
 
-export const Body = css`
-  ${Typography}
-  font-size: 2rem;
+export const FontSize = css`
+  font-size: 1rem;
 `;
 
 export const H1 = styled.h1`
@@ -33,7 +32,7 @@ export const H4 = styled.h4`
 
 export const H5 = styled.h5`
   ${Typography}
-  font-size: 1rem;
+  ${FontSize}
 `;
 
 export const H6 = styled.h6`
@@ -43,5 +42,5 @@ export const H6 = styled.h6`
 
 export const Text = styled.p`
   ${Typography}
-  font-size: 1rem;
+  ${FontSize}
 `;
