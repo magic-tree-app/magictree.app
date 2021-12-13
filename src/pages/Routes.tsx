@@ -16,7 +16,7 @@ export const Routes: React.FC = (): JSX.Element => {
         { path: 'collection', element: <TextPlaceholder text="Toy collection" /> },
       ],
     },
-    { path: process.env.REACT_APP_DEV_PATH, element: <DevView text="The quick brown fox jumps over the lazy dog." /> },
+    { path: process.env.REACT_APP_DEV_PATH, element: <DevView /> },
   ]);
 
   return <>{routing}</>;

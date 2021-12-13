@@ -1,20 +1,13 @@
 import React from 'react';
-import {
-  H1, H2, H3, H4, H5, H6, Text,
-} from '../../styled/general/typography.styled';
+import { Button } from '../../components/Button/Button';
 
-type DevViewProps = {
-  text: string;
-}
+type DevViewProps = {};
 
-export const DevView: React.FC<DevViewProps> = ({ text }) => (
+export const DevView: React.FC<DevViewProps> = ({ }) => (
   <>
-    <H1>{text}</H1>
-    <H2>{text}</H2>
-    <H3>{text}</H3>
-    <H4>{text}</H4>
-    <H5>{text}</H5>
-    <H6>{text}</H6>
-    <Text>{text}</Text>
+    <Button>default</Button>
+    <Button primary>primary</Button>
+    <Button disabled>default disabled</Button>
+    <Button primary disabled>primary disabled</Button>
   </>
 );
