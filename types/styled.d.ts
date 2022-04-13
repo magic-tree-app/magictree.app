@@ -1,20 +1,22 @@
 import 'styled-components';
 
-interface IColor {
-  normal: `#${string}`;
-  brighter: `#${string}`;
-  darker: `#${string}`;
+type Color = `#${string}`;
+
+interface ColorVariants {
+  normal: Color;
+  brighter: Color;
+  darker: Color;
 }
 
-interface IColorPalette {
-  primary: IColor;
-  white: IColor;
-  green: IColor;
-  pink: IColor;
+interface ColorPalette {
+  primary: ColorVariants;
+  white: Color;
+  green: ColorVariants;
+  pink: ColorVariants;
 }
 
 declare module 'styled-components' {
   export interface DefaultTheme {
-    colors: IColorPalette;
+    colors: ColorPalette;
   }
 }

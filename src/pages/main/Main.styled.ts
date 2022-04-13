@@ -10,7 +10,7 @@ export const SocialMediaLink = styled.a`
   text-decoration: none;
   font-size: 1.5rem;
   line-height: 2rem;
-  color: ${({ theme }) => theme.colors.white.normal};
+  color: ${({ theme }) => theme.colors.white};
   background-color: transparent;
   border-radius: 0.2rem;
   transition: background-color 200ms;
