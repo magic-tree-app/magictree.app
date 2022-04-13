@@ -1,10 +1,10 @@
-import styled, { css } from 'styled-components';
+import { css } from 'styled-components';
 
-export const Flex = styled.div`
+export const Flex = css`
   display: flex;
 `;
 
-export const Grid = styled.div`
+export const Grid = css`
   display: grid;
 `;
 
@@ -16,12 +16,14 @@ export const CenteredHorizontal = css`
   justify-content: center;
 `;
 
-export const CenteredFlex = styled(Flex)`
+export const CenteredFlex = css`
+  ${Flex}
   ${CenteredVertical}
   ${CenteredHorizontal}
 `;
 
-export const CenteredGrid = styled(Grid)`
+export const CenteredGrid = css`
+  ${Grid}
   ${CenteredVertical}
   ${CenteredHorizontal}
 `;

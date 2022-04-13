@@ -1,19 +1,25 @@
 import React from 'react';
-import { StyledButton } from './Button.styled';
+import { ButtonType, StyledButton } from './Button.styled';
 
 type ButtonProps = {
-  // eslint-disable-next-line react/require-default-props
+  type?: ButtonType;
   primary?: boolean;
-  // eslint-disable-next-line react/require-default-props
   disabled?: boolean;
-  // eslint-disable-next-line react/require-default-props
   children?: string;
+
+  // Events
+  onClick?: React.MouseEventHandler<HTMLButtonElement>;
 }
 
+/* TODO:
+ * - implement 'icon' prop
+ * - implement 'component' prop
+ * - implement other events
+ */
 export const Button: React.FC<ButtonProps> = ({
-  children, primary, disabled,
+  children, primary, disabled, onClick, type = 'dark',
 }) => (
-  <StyledButton $primary={primary} disabled={disabled}>
+  <StyledButton $type={type} $primary={primary} disabled={disabled} onClick={onClick}>
     {children}
   </StyledButton>
 );

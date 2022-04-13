@@ -1,7 +1,9 @@
 import styled from 'styled-components';
 import { Flex } from '../../styled/general/display.styled';
 
-export const SidebarSection = styled(Flex)<{ $isCollapsed: boolean }>`
+export const SidebarSection = styled.aside<{ $isCollapsed: boolean }>`
+  ${Flex}
+
   flex-direction: column;
   width: ${({ $isCollapsed }) => ($isCollapsed ? '5rem' : '20rem')};
   background-color: ${({ theme }) => theme.colors.primary.normal};

@@ -7,11 +7,7 @@ export const defaultTheme: DefaultTheme = {
       brighter: '#3E32A1',
       darker: '#281F6E',
     },
-    white: {
-      normal: '#FFFFFF',
-      brighter: '#FFFFFF',
-      darker: '#FFFFFF',
-    },
+    white: '#FFFFFF',
     green: {
       normal: '#95C11F',
       brighter: '#95C11F',
@@ -19,8 +15,8 @@ export const defaultTheme: DefaultTheme = {
     },
     pink: {
       normal: '#E6007E',
-      brighter: '#E6007E',
-      darker: '#E6007E',
+      brighter: '#ff0A90',
+      darker: '#BF086C',
     },
   },
 };
